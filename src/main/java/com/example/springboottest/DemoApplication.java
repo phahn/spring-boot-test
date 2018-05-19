@@ -18,7 +18,9 @@ public class DemoApplication {
 	@ResponseBody
 	List<Post> listPosts() {
 		List<Post> posts = new ArrayList<>();
-		posts.add(new Post(1L, "Test Title", "Lorem ipsum"));
+		for (int i = 0; i < 100; i++) {
+			posts.add(new Post(Long.valueOf(i), "Test Title " + i, "Lorem ipsum"));
+		}
 		return posts;
 	}
 
