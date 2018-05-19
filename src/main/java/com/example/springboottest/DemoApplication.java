@@ -6,14 +6,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 @SpringBootApplication
 public class DemoApplication {
 
 	@RequestMapping("/")
 	@ResponseBody
-	String home() {
-		return "Hello World!";
+	List<Post> listPosts() {
+		List<Post> posts = new ArrayList<>();
+		posts.add(new Post(1L, "Test Title", "Lorem ipsum"));
+		return posts;
 	}
 
 	public static void main(String[] args) {
