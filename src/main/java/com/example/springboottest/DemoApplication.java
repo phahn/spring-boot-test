@@ -2,6 +2,7 @@ package com.example.springboottest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,7 +14,7 @@ import java.util.List;
 @SpringBootApplication
 public class DemoApplication {
 
-	@RequestMapping("/")
+	@RequestMapping(value="/api", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	List<Post> listPosts() {
 		List<Post> posts = new ArrayList<>();
